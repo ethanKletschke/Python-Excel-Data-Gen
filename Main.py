@@ -35,7 +35,7 @@ for i in range(stopping_row + 1):
     data.append(temp)
 
 # Write to the CSV File
-with open("Result.csv", "w+") as csv:
+with open("Data.csv", "w+") as csv:
     # Print the headings
     csv.write("ID, first_name,last_name,age,city,amount_owed\n")
 
