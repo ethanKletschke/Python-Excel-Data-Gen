@@ -8,15 +8,15 @@ class Details:
         self.age = 0
         self.city = ""
         self.owed = 0.00
-    
+
     def set_id(self):
         if self.uniqueID == "" or self.uniqueID is None:
-            if self.name != "" or self.name is not None:
-                self.id = self.name[0:2]
+            if self.fname != "" or self.fname is not None:
+                self.id = self.fname[0:2]
                 self.id += str(self.age)
                 self.id += self.city[-2:0]
-    
-    def randomise(self):        
+
+    def randomise(self):
         fnames = [
             "Oscar",
             "Maria",
@@ -41,12 +41,12 @@ class Details:
             "Susie",
             "Marion",
             "Ian",
-            "Nat", 
+            "Nat",
             "Piper",
             "Yoni",
             "Virgil"
         ]
-        
+
         lnames = [
             "Ferguson",
             "Gross",
@@ -72,7 +72,7 @@ class Details:
             "Alvarez",
             "Hart"
         ]
-        
+
         cities = [
             "Orevanafe",
             "Sabakas",
@@ -96,11 +96,12 @@ class Details:
             "Polupif",
             "Bittaniv"
         ]
-        
-        self.fname = fnames[rnd.randint(0, len(fnames))]
-        self.lname = lnames[rnd.randint(0, len(lnames))]   
-        self.city = cities[rnd.randint(0, len(cities))]     
+
+        self.fname = fnames[rnd.randint(0, len(fnames) - 1)]
+        self.lname = lnames[rnd.randint(0, len(lnames) - 1)]
+        self.city = cities[rnd.randint(0, len(cities) - 1)]
         self.age = rnd.randint(1,129)
-        self.owed = rnd.randrange(0.00, 1000.99)
-        
-        
+        self.owed = rnd.randrange(0, 999)
+
+        # Set the ID
+        self.set_id()
