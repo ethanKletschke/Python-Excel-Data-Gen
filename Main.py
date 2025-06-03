@@ -1,6 +1,3 @@
-# A program that generates random Excel data in a .csv file
-
-# Imports
 from os import _exit as stop
 from Errors import error_stop as errstop
 from Details import Details as dtls
@@ -29,19 +26,26 @@ else:
 
 # Create the Details (with the alias "dtls") object
 details = dtls()
+
+# Loop from 0 to the stopping row
+# (+1 to account for zero-based indexes)
 for i in range(stopping_row + 1):
     details.randomise()
 
-    temp = []
+    # Declare a temporary array called "row"
+    row = []
 
-    temp.append(i + 1)
-    temp.append(details.fname)
-    temp.append(details.lname)
-    temp.append(details.age)
-    temp.append(details.city)
-    temp.append(details.owed)
+    # Append the index to the array
+    row.append(i + 1)
+    row.append(details.uniqueID) # Unique ID
+    row.append(details.fname) # First Name
+    row.append(details.lname) # Last Name
+    row.append(details.age) # Age
+    row.append(details.city) # City
+    row.append(details.owed) # Amount Owed
 
-    data.append(temp)
+    # Append the "row" array to the "data" array
+    data.append(row)
 
 # Write to the CSV File
 with open("Data.csv", "w+") as csv:
@@ -50,7 +54,6 @@ with open("Data.csv", "w+") as csv:
 
     # From 0 to the index provided
     for i in range(0, stopping_row):
-
         for j in range(0, 6):
             # Write the data generated into the CSV file.
             csv.write(f"{data[i][j]},")

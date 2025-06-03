@@ -1,4 +1,14 @@
-# Hide the pycache folder.
+# Pycache folder
 __pycache__
+
+# Test Scripts
 *.test.py
+
+# CSV Output
 *.csv
+
+# Python Virtual Environment (for Linux)
+.venv/
+
+# Editorconfig file
+.editorconfig

@@ -1,8 +1,12 @@
 # Python Excel Data Generator
 
-I decided to create a small program to help me generate random Excel data, to practice
-built-in functions.  
-But it soon became a larger project worthy for Github!
+A Python-based CSV file generator with random data.
+
+- Author: Ethan Kletschke
+- Version: `1.2.0`
+- Environments of Development:
+  - Ubuntu (WSL) for development
+  - Windows 11 for testing (previously for development)
 
 ## How to use
 
